@@ -29,6 +29,7 @@ public class Main extends Application {
         Parent root = fxmlLoader.getRoot();
         GuessingGame game = fxmlLoader.getController();
         game.setStage(primaryStage);
+        game.newGame();
 
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

@@ -1,7 +1,9 @@
 package pl.ml;
 
+import com.sun.org.apache.bcel.internal.generic.ALOAD;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -47,7 +49,11 @@ public class GuessingGame implements Initializable {
             } else if (guess > number) {
                 message.setText(guess + " is too high!");
             } else {
-                message.setText(guess + " is correct! It only took you " + tries + " tries.");
+                message.setText("Let's play again! \nEnter new number and hit that button.");
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setHeaderText(guess + " is correct number! \nIt only took you " + tries + " tries.");
+                alert.setTitle("CONGRATULATIONS!");
+                alert.showAndWait();
                 newGame();
             }
         } catch (Exception e) {

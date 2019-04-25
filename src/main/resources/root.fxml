@@ -13,7 +13,7 @@
       <children>
             <Button onAction="#checkGuess" fx:id="tryButton" layoutX="366.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Try!" />
             <TextField fx:id="guess" layoutX="197.0" layoutY="152.0" prefHeight="25.0" prefWidth="160.0" />
-            <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="192.0" prefHeight="25.0" prefWidth="243.0" text="Place a number in field above and give it a go." />
+            <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="192.0" prefHeight="50.0" prefWidth="550.0" text="Place a number in field above and give it a go." />
             <Label alignment="CENTER" layoutX="-2.0" layoutY="48.0" prefHeight="72.0" prefWidth="640.0" text="Guessing game">
                <font>
                   <Font size="30.0" />
