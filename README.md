@@ -1,1 +1,4 @@
 # HiLo-game
+
+Technologie:
+- jfx
