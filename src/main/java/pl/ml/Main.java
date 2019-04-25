@@ -1,42 +1,36 @@
 package pl.ml;
 
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * @author pmatusiak
  */
-public class Main {
+public class Main extends Application {
     /**
      * Program ma za zadanie wylosować liczbę, a użytkownik ma ją zgadnąć.
      * Jeśli użytkownik poda mniejszą niż wylosowana - program wypisuje tekst "za mała liczba", jeśli poda większą wypisuje "za duża liczba".
      */
 
-    static Random random = new Random();
-    static int rand = random.nextInt(100) + 1;
-    static int guessed;
-
-    public static void inputNumber() {
-        Scanner scanner = new Scanner(System.in);
-        try {
-            guessed = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.err.println("Input number!");
-        }
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    public static void main(String[] args) {
-        inputNumber();
-        while (guessed != rand) {
-            if (guessed > rand){
-                System.out.println("Too high!");
-            } else if (guessed < rand) {
-                System.out.println("Too low!");
-            } else {
-                System.out.println("Correct! You won!");
-            }
-            inputNumber();
-        }
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/root.fxml"));
+        fxmlLoader.load();
+
+        Parent root = fxmlLoader.getRoot();
+        GuessingGame game = fxmlLoader.getController();
+        game.setStage(primaryStage);
+
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
     }
 }

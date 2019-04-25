@@ -2,3 +2,5 @@
 
 Technologie:
 - jfx
+
+//TODO refactor, testy
