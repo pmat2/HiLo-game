@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +24,8 @@ public class Main extends Application {
         fxmlLoader.load();
 
         Parent root = fxmlLoader.getRoot();
+        primaryStage.getIcons().add(new Image("question-mark-square-01.png"));
+        primaryStage.setTitle("Hi-Lo Game");
         GuessingGame game = fxmlLoader.getController();
         game.setStage(primaryStage);
         game.newGame();
